@@ -11,7 +11,7 @@ int main()
 	// input the number of datasets
 	cin >> testcase;
 
-	// allocate array
+	// allocate array & input each integer
 	for (int i = 0; i < testcase; i++){
 		numbers[i] = new int[2];
 		cin >> numbers[i][0] >> numbers[i][1];
