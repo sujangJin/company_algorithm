@@ -19,11 +19,17 @@ int main()
 	
 	// process
 	while (index < testcase){
+		// if number is negative
+		// first, two numbers are all negative
+		// this case, result is also negative
 		if (numbers[index][0] < 0 && numbers[index][1] < 0){
 			numbers[index][0] *= -1; 
 			numbers[index][1] *= -1;
 			allnegative = -1;
 		}
+		
+		// second, one of numbers is negative
+		// just multiply -1
 		else if (numbers[index][0] < 0){
 			numbers[index][0] *= -1;
 		}
