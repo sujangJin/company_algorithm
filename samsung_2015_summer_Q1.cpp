@@ -11,14 +11,17 @@ int main()
 	vector<char> res_string;
 	char before, current;
 	
+	//------------------input start-------------------
 	cin >> testcase;	
-
+	
+	// allocate the space that is used for saving each sentence
 	for (int i = 0; i < testcase; i++){
 		string[i] = new char[20];
 		cin >> string[i];
 	}
+	//------------------input end----------------------
+	
 	index = 0;
-
 	while (index < testcase){
 		
 		current = string[index][0];
@@ -40,7 +43,8 @@ int main()
 					res_string.push_back(before);
 					res_string.push_back(count);
 				}
-				else 
+				else 	// when count is more than 10, we must split that number
+					// and than save to vector space
 				{
 					res_string.push_back(current);
 					int quo = count / 10;
@@ -54,7 +58,7 @@ int main()
 			}
 
 		}
-			count += '0';
+			count += '0';				// change integer to char
 			res_string.push_back(current);
 			res_string.push_back(count);
 		
@@ -78,7 +82,8 @@ int main()
 		res_string.clear();
 		index++;
 	}
-
+	
+	// return the spaces allocated dynamically
 	for (int i = 0; i < testcase; i++)
 		delete[] string[i];
 	delete[] string;
