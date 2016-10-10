@@ -25,7 +25,9 @@ int main()
 	while (index < testcase){
 		
 		current = string[index][0];
-
+		
+		// the idea of for loop is Linked-List that
+		// compares before node to current node
 		for (char* cp = string[index]; *cp != '\0'; cp++)
 		{
 			before = current;
