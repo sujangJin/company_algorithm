@@ -45,7 +45,7 @@ void make_inorder(vector<int> pre, vector<int> post)
 	vector<int>::iterator end_point = find(post.begin(), post.end(), pre.at(1));
 	vector<int>::iterator start = post.begin();
 
-	int index = (end_point - start) + 1;	// 1ºÎÅÍ indexing ½ÃÀÛÇßÀ¸¹Ç·Î ¿¬»ê °á°ú¿¡¼­ 1 ´õÇÔ
+	int index = (end_point - start) + 1;	// 1ë¶€í„° indexing ì‹œì‘í–ˆìœ¼ë¯€ë¡œ ì—°ì‚° ê²°ê³¼ì—ì„œ 1 ë”í•¨
 	
 	//////////////// Retrieve L ///////////////////
 	for (int i = 1; i < 1 + index; i++)
@@ -69,18 +69,13 @@ void make_inorder(vector<int> pre, vector<int> post)
 	}
 
 	///////////////////output part///////////////////
-
-	if (L_pre.size() == 1 && L_post.size() == 1)
-		printf("%d ",L_pre.at(0));
-	else
+	
+	if (L_pre.size() != 1 || L_post.size() != 1)
 		make_inorder(L_pre, L_post);
-
+	
 	printf("%d ", root);
 
-	if (R_pre.size() == 1 && R_pre.size() == 1)
-		printf("%d ", R_pre.at(0));
-	else{
-		if (R_pre.size() != 0 && R_post.size() != 0)
-			make_inorder(R_pre, R_post);
-	}
+	if (R_pre.size() > 1 || R_pre.size() > 1)
+		make_inorder(R_pre, R_post);
+	
 }
