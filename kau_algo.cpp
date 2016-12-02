@@ -73,8 +73,13 @@ void make_inorder(vector<int> pre, vector<int> post)
 	if (L_pre.size() > 1 || L_post.size() > 1)
 		make_inorder(L_pre, L_post);
 	else {
-		if(L_post.size() == 1)	printf("%d ",L_post.at(0));
-		if(L_pre.size() == 1 )	printf("%d ",L_pre.at(0));
+		if(L_post.size() == 1 && L_pre.size() == 1)
+		{
+		}
+		else{
+			if(L_post.size() == 1)	printf("%d ",L_post.at(0));
+			if(L_pre.size() == 1 )	printf("%d ",L_pre.at(0));
+			printf("%d ", root);
 	}
 	
 	printf("%d ", root);
