@@ -70,12 +70,20 @@ void make_inorder(vector<int> pre, vector<int> post)
 
 	///////////////////output part///////////////////
 	
-	if (L_pre.size() != 1 || L_post.size() != 1)
+	if (L_pre.size() > 1 || L_post.size() > 1)
 		make_inorder(L_pre, L_post);
+	else {
+		if(L_post.size() == 1)	printf("%d ",L_post.at(0));
+		if(L_pre.size() == 1 )	printf("%d ",L_pre.at(0));
+	}
 	
 	printf("%d ", root);
 
-	if (R_pre.size() > 1 || R_pre.size() > 1)
+	if (R_pre.size() > 1 || R_post.size() > 1)
 		make_inorder(R_pre, R_post);
+	else {
+		if(R_post.size() ==  1)		printf("%d ", R_post.at(0));
+		if(R_pre.size() == 1)		printf("%d ", R_pre.at(0));
+	}
 	
 }
