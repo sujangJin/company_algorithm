@@ -92,3 +92,5 @@ void make_inorder(vector<int> pre, vector<int> post)
 	}
 	
 }
+	
+}
